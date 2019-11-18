@@ -20,4 +20,10 @@ public class PersonService {
     public List<Person> listAll() {
         return personDao.findAll();
     }
+
+    public Person saveUser(String name) {
+        Person person = new Person();
+        person.setName(name);
+        return personDao.save(person);
+    }
 }

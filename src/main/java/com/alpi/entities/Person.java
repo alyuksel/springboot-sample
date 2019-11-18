@@ -1,15 +1,17 @@
 package com.alpi.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import com.alpi.annotations.NonEmpty;
+
+import javax.persistence.*;
 
 @Entity(name = "person")
 public class Person {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NonEmpty
     private String name;
 
     public Long getId() {
